@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 
+
+
 const mapStyles = {
   width: '100%',
   height: '100%',
@@ -23,14 +25,14 @@ class App extends React.Component {
 }
 
 callAPI() {
-  fetch("http://localhost:5000/chargers")
-      .then(res => res.json())
-      .then(response => this.setState({ chargers: response}) );
-}
+  fetch('http://localhost:4000/chargers')
+   .then(res => res.json())
+   .then(response => this.setState({ chargers: response}) );
+  }
 
-componentWillMount() {
-  this.callAPI();
-}
+ componentWillMount() {
+    this.callAPI();
+  }
 
 onMarkerClick = (props, marker, e) =>
     this.setState({
